@@ -33,5 +33,11 @@ class ViewController: UIViewController {
         TextTF.resignFirstResponder()
     }
     
+    // background의 view를 탭하면 키패드가 내려감
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        TextTF.resignFirstResponder()
+    }
+    
 }
 
