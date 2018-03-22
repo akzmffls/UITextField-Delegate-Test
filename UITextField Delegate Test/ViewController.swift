@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var Textlbl: UILabel!
+    
+    @IBOutlet var TextTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        TextTF.placeholder = "입력을 하세요"
+        TextTF.clearButtonMode = UITextFieldViewMode.whileEditing
+        TextTF.borderStyle = UITextBorderStyle.line
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +27,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func TextBt(_ sender: UIButton) {
+        Textlbl.text = "Hello " + TextTF.text!
+        TextTF.text = ""
+        TextTF.resignFirstResponder()
+    }
+    
 }
 
