@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var Textlbl: UILabel!
     
@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // UiTextFieldDeleagte 객체와 ViewController 객채와 연결
+        TextTF.delegate = self
+        
         TextTF.placeholder = "입력을 하세요"
         TextTF.clearButtonMode = UITextFieldViewMode.whileEditing
         TextTF.borderStyle = UITextBorderStyle.line
@@ -39,5 +42,12 @@ class ViewController: UIViewController {
         TextTF.resignFirstResponder()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool  {// called when 'return' key pressed.
+        view.backgroundColor = UIColor.yellow
+        TextTF.resignFirstResponder()
+        return true
+    }
+    
+
 }
 
