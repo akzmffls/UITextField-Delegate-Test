@@ -47,7 +47,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         TextTF.resignFirstResponder()
         return true
     }
-    
-
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {// called when clear button pressed. return NO to ignore (no notifications)
+        view.backgroundColor = UIColor.green
+        TextTF.resignFirstResponder()
+        return true
+    }
 }
 
